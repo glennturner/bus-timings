@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "A no-frills package to track nearby bus arrival times via the BusTime API, such as the MTA and CTA.",
   "author": "G. Turner <contact@iamgturner.com>",
-  "exports": "./src/bustime-service.js",
+  "main": "index.js",
   "directories": {
     "lib": "lib",
     "test": "tests"

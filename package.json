@@ -3,15 +3,29 @@
   "version": "1.0.0",
   "description": "A no-frills package to track nearby bus arrival times via the BusTime API, such as the MTA and CTA.",
   "author": "G. Turner <contact@iamgturner.com>",
-  "main": "index.js",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/main.js",
+      "require": "./dist/main.cjs",
+      "default": "./dist/main.cjs"
+    },
+    "./package.json": "./package.json"
+  },
   "directories": {
     "lib": "lib",
     "test": "tests"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack"
+    "build": "webpack --config=webpack.config-esm.cjs && webpack --config=webpack.config-cjs.cjs --no-output-clean",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "webpack": "^5.97.1"
+  },
+  "devDependencies": {
+    "webpack-cli": "^6.0.1"
+  }
 }
